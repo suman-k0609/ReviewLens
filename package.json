@@ -1,0 +1,25 @@
+{
+  "name": "reviewlens",
+  "version": "1.0.0",
+  "description": "AI-powered product review insights dashboard",
+  "scripts": {
+    "server": "node server/index.js",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd client && npm install",
+    "test": "node --test tests/runAllTests.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "multer": "^1.4.5-lts.1",
+    "csv-parse": "^5.6.0",
+    "@google/generative-ai": "^0.21.0",
+    "better-sqlite3": "^11.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "concurrently": "^9.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
