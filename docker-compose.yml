@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  reviewlens:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: reviewlens-app
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    volumes:
+      - reviewlens-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  reviewlens-data:
