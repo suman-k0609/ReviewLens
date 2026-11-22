@@ -3,6 +3,7 @@ dist/
 .env
 data/
 *.db
+*.zip
 uploads/
 .DS_Store
 Thumbs.db
