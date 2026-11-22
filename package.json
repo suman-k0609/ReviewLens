@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "AI-powered product review insights dashboard",
   "scripts": {
+    "start": "node server/index.js",
+    "build": "npm --prefix client install && npm --prefix client run build",
     "server": "node server/index.js",
     "client": "cd client && npm run dev",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
