@@ -4,6 +4,13 @@ ReviewLens is an AI-powered web application designed for e-commerce store owners
 
 ---
 
+## 🔗 Project Links
+
+- **Live Deployed App:** [https://reviewlens-h6jj.onrender.com/](https://reviewlens-h6jj.onrender.com/)
+- **GitHub Repository:** [https://github.com/suman-k0609/ReviewLens](https://github.com/suman-k0609/ReviewLens)
+
+---
+
 ## 🚀 Quick Start & Setup
 
 Tested and verified on Node.js v18+.
