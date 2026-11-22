@@ -39,31 +39,57 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <div className="header-content">
-          <h1 className="logo">🔍 ReviewLens</h1>
-          <p className="tagline">AI-Powered Product Review Insights</p>
-          {data && (
-            <button className="btn btn-secondary" onClick={handleReset}>
-              ↩ Upload New File
-            </button>
-          )}
+    <div className="app-shell">
+      {/* Top Navigation Bar */}
+      <header className="app-header-modern">
+        <div className="header-container">
+          <div className="brand-group">
+            <div className="brand-icon-gem">🔍</div>
+            <div className="brand-titles">
+              <div className="brand-heading-row">
+                <span className="brand-name">ReviewLens</span>
+                <span className="brand-pill-tag">AI Intelligence</span>
+              </div>
+              <p className="brand-tagline">Autonomous Customer Sentiment & Defect Analysis</p>
+            </div>
+          </div>
+
+          <div className="header-actions-group">
+            <a
+              href="https://github.com/suman-k0609/ReviewLens"
+              target="_blank"
+              rel="noreferrer"
+              className="btn-header-link"
+              title="View on GitHub"
+            >
+              ⭐ GitHub Repo
+            </a>
+
+            {data && (
+              <button className="btn btn-secondary btn-header-upload" onClick={handleReset}>
+                ↩ Upload New File
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
       {error && (
-        <div className="error-banner">
-          <span>⚠️ {error}</span>
-          <button onClick={() => setError(null)} className="error-dismiss">✕</button>
+        <div className="error-toast-bar">
+          <span className="error-icon">⚠️</span>
+          <span className="error-msg">{error}</span>
+          <button onClick={() => setError(null)} className="error-close-btn">✕</button>
         </div>
       )}
 
-      <main className="main-content">
+      <main className="app-main-layout">
         {loading && (
-          <div className="loading-overlay">
-            <div className="spinner" />
-            <p>Analyzing reviews with AI…</p>
+          <div className="loading-backdrop">
+            <div className="loading-modal-card">
+              <div className="spinner-glow"></div>
+              <h3>Analyzing Customer Reviews with AI...</h3>
+              <p>Cleaning messy data, translating Hinglish, verifying prompt injection defense, and compiling store insights.</p>
+            </div>
           </div>
         )}
 
@@ -73,6 +99,10 @@ function App() {
           <Dashboard data={data} />
         )}
       </main>
+
+      <footer className="app-footer-modern">
+        <p>ReviewLens AI • CEDCOSS Associate Software Developer Assessment • Built with React & Node.js</p>
+      </footer>
     </div>
   );
 }
